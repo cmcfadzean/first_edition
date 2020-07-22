@@ -1,34 +1,19 @@
-<p id="notice"><%= notice %></p>
+<div class="">
+  <%= link_to 'New Book', new_book_path %>
+</div>
 
 <h1>Books</h1>
 
 <table>
-  <thead>
-    <tr>
-      <th>Title</th>
-      <th>Genre</th>
-      <th>Description</th>
-      <th>Published</th>
-      <th colspan="4"></th>
-    </tr>
-  </thead>
-
   <tbody>
     <% @books.each do |book| %>
       <tr>
         <td><%= book.title %></td>
         <td><%= book.genre %></td>
-        <td><%= book.description %></td>
         <td><%= book.published %></td>
-        <td><%= link_to 'chapters', book_chapters_path(book) %></td>
-        <td><%= link_to 'Show', book %></td>
         <td><%= link_to 'Edit', edit_book_path(book) %></td>
         <td><%= link_to 'Destroy', book, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
     <% end %>
   </tbody>
 </table>
-
-<br>
-
-<%= link_to 'New Book', new_book_path %>

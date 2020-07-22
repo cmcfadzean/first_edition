@@ -1,6 +1,22 @@
-<h1>Editing Book</h1>
+<div class="">
+  <%= link_to 'Books', books_path %>
+</div>
+
+<h1><%= @book.title %></h1>
 
 <%= render 'form', book: @book %>
 
-<%= link_to 'Show', @book %> |
-<%= link_to 'Back', books_path %>
+<h2>Chapters</h2>
+
+<%= link_to 'New Chapter', new_book_chapter_path(@book) %>
+
+<table>
+  <% @chapters.each do |chapter| %>
+    <tr>
+      <td><%= chapter.title %></td>
+      <td><%= chapter.published %></td>
+      <td><%= link_to 'Edit', edit_book_chapter_path(chapter.book, chapter) %></td>
+      <td><%= link_to 'Destroy', [chapter.book, chapter], method: :delete, data: { confirm: 'Are you sure?' } %></td>
+    </tr>
+  <% end %>
+</table>

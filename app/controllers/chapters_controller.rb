@@ -25,7 +25,7 @@ class ChaptersController < ApplicationController
     @chapter = @book.chapters.build(chapter_params)
 
     if @chapter.save
-      redirect_to([@chapter.book, @chapter], notice: 'Chapter was successfully created.')
+      redirect_to(edit_book_chapter_path(@chapter.book, @chapter), notice: 'Chapter was successfully created.')
     else
       render action: 'new'
     end
@@ -34,7 +34,7 @@ class ChaptersController < ApplicationController
   # PUT books/1/chapters/1
   def update
     if @chapter.update_attributes(chapter_params)
-      redirect_to([@chapter.book, @chapter], notice: 'Chapter was successfully updated.')
+      redirect_to(edit_book_chapter_path(@chapter.book, @chapter), notice: 'Chapter was successfully updated.')
     else
       render action: 'edit'
     end
