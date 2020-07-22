@@ -1,0 +1,8 @@
+<div class="">
+  <%= link_to 'Books', books_path %> / 
+  <%= link_to @chapter.book.title, edit_book_path(@chapter.book) %>
+</div>
+
+<h1><%= @chapter.title %></h1>
+
+<%= render 'form' %>
