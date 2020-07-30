@@ -1,0 +1,19 @@
+.system-logo {
+  flex: 1;
+  &__link {
+    display: flex;
+    align-items: center;
+    &:hover {
+      text-decoration: none;
+    }
+  }
+  &__img {
+    height: 30px;
+    margin-right: 8px;
+  }
+  &__text {
+    font-family: 'Lora', serif;
+    font-weight: 700;
+    font-size: 20px;
+  }
+}
