@@ -1,9 +1,9 @@
-
+@import url('https://rsms.me/inter/inter.css');
 html {
-  font-size: 22px;
+  font-size: 18px;
 }
 body {
-  font-family: 'Crimson Text', serif;
+  font-family: 'Inter', sans-serif;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
@@ -13,6 +13,7 @@ body {
   font-weight: 400;
 }
 h1,h2,h3,h4,h5,h6 {
+  font-family: 'Crimson Text', serif;
   font-weight: 700;
   margin-bottom: 0;
 }
