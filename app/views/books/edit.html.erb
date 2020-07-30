@@ -11,8 +11,9 @@
 <%= link_to 'New Chapter', new_book_chapter_path(@book) %>
 
 <table>
-  <% @chapters.each do |chapter| %>
+  <% @chapters.each_with_index do |chapter, index| %>
     <tr>
+      <td><%= index + 1 %>. </td>
       <td><%= chapter.title %></td>
       <td><%= chapter.published %></td>
       <td><%= link_to 'Edit', edit_book_chapter_path(chapter.book, chapter) %></td>
