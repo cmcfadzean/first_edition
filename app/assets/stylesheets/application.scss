@@ -1,15 +1,9 @@
-/***********************************************/
-/* Vendor Styles */
-/***********************************************/
-@import "system/vendor/reboot";
-
+/*= require medium-editor/medium-editor
+/*= require medium-editor/themes/beagle
 /***********************************************/
 /* Design Tokens */
 /***********************************************/
-@import "system/tokens/border";
 @import "system/tokens/color";
-@import "system/tokens/font_size";
-@import "system/tokens/spacing";
 
 /***********************************************/
 /* Core Styles */

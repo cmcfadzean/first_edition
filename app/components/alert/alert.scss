@@ -8,13 +8,12 @@
 .system {
   &-alert {
     @include simple-ease(all);
-    background: system-color(primary);
-    border-radius: system-border(radius);
+    transition: all 0.5s ease-in-out 0s;
+    background: #000;
     color: #fff;
     display: inline-block;
     margin: 0px auto;
     position: fixed;
-    transition: all 0.5s ease-in-out 0s;
     z-index: 1060;
     bottom: 30px;
     right: 30px;

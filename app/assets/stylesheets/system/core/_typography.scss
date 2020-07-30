@@ -1,14 +1,18 @@
-@import url('https://rsms.me/inter/inter.css');
 
+html {
+  font-size: 22px;
+}
 body {
+  font-family: 'Crimson Text', serif;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
   text-size-adjust: 100%;
-  font-family: 'Inter', sans-serif;
+  font-weight: 400;
 }
-@supports (font-variation-settings: normal) {
-  body { font-family: 'Inter var', sans-serif; }
+h1,h2,h3,h4,h5,h6 {
+  font-weight: 700;
+  margin-bottom: 0;
 }
