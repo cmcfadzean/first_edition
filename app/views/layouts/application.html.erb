@@ -17,12 +17,17 @@
       <% if user_signed_in? %>
         <%= link_to current_user.email, edit_user_registration_path, :class => '#' %>
         <%= link_to "Logout", destroy_user_session_path, method: :delete, :class => '#'  %>
+        <%= yield :actions %>
       <% else %>
         <%= link_to "Login", new_user_session_path, :class => '#'  %>
         <%= link_to "Sign up", new_user_registration_path, :class => 'btn btn-primary'  %>
       <% end %>
     <% end %>
-    <%= yield %>
+    <%= component "desk" do %>
+      <%= component "container", size: "md" do %>
+        <%= yield %>
+      <% end %>
+    <% end %>
     <%= component "alert", id: "notice", message: notice %>
     <%= component "alert", id: "alert", message: alert %>
     <!-- JS, Popper.js, and jQuery -->

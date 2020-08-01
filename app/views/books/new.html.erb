@@ -1,14 +1,6 @@
-<%= component "container", size: "lg" do %>
-  <%= component "breadcrumbs" do %>
-    <strong><%= link_to 'My Books', new_book_path %></strong>
-  <% end %>
-  <%= component "title", text: "My Books" %>
-  <% @books.each do |book| %>
-    <%= component "cover", url: edit_book_path(book), title: book.title, genre: book.genre, published: book.published %>
-  <% end %>
+<%= component "breadcrumbs" do %>
+  <%= link_to 'My Books', books_path %>
+  <strong>New Book</strong>
 <% end %>
-
-
-<h1>New Book</h1>
-
+<%= component "title", text: "New Book" %>
 <%= render 'form', book: @book %>
