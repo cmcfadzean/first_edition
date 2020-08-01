@@ -1,0 +1,15 @@
+.system-breadcrumbs {
+  margin: 24px 0;
+  font-size: 13px;
+  text-transform: uppercase;
+  a {
+    font-weight: 700;
+    margin: 0 24px;
+    &:first-of-type {
+      margin-left: 0;
+    }
+  }
+  strong {
+
+  }
+}

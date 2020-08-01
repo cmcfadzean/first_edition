@@ -9,8 +9,9 @@
   &-alert {
     @include simple-ease(all);
     transition: all 0.5s ease-in-out 0s;
-    background: #000;
-    color: #fff;
+    background: system-color(primary);
+    color: system-color(gray, 900);
+    font-weight: 600;
     display: inline-block;
     margin: 0px auto;
     position: fixed;

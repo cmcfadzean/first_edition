@@ -3,5 +3,5 @@ Rails.application.routes.draw do
     resources :chapters
   end
   devise_for :users
-  root 'books#index'
+  root 'books#new'
 end
