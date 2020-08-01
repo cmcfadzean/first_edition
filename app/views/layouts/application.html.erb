@@ -24,7 +24,9 @@
       <% end %>
     <% end %>
     <%= component "desk" do %>
-      <%= yield %>
+      <%= component "container", size: "md" do %>
+        <%= yield %>
+      <% end %>
     <% end %>
     <%= component "alert", id: "notice", message: notice %>
     <%= component "alert", id: "alert", message: alert %>

@@ -1,10 +1,8 @@
-<%= component "container", size: "lg" do %>
-  <%= component "breadcrumbs" do %>
-    <%= link_to 'My Books', books_path %>
-    <strong><%= @book.title %></strong>
-  <% end %>
-  <%= component "title", text: @book.title %>
+<%= component "breadcrumbs" do %>
+  <%= link_to 'My Books', books_path %>
+  <strong><%= @book.title %></strong>
 <% end %>
+<%= component "title", text: @book.title %>
 
 <%= render 'form', book: @book %>
 <%= link_to 'Destroy', @book, method: :delete, data: { confirm: 'Are you sure?' } %>

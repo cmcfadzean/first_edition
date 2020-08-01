@@ -7,16 +7,21 @@
   }
 }
 .form-group {
+  margin-bottom: 32px;
   label {
     font-size: 13px;
     text-transform: uppercase;
-    font-weight: 600;
+    font-weight: 700;
   }
   textarea {
     min-height: 150px;
   }
+  .btn {
+    padding: 12px 24px;
+  }
 }
 .form-control {
+  margin-top: 8px;
   &:focus {
     border-color: #000;
     outline: none;

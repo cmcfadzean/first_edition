@@ -1,12 +1,10 @@
 <% content_for :actions do %>
-  <%= link_to 'New Book', new_book_path, class: "btn btn-primary" %>
+  <%= link_to 'New Book', new_book_path, class: "btn btn-primary btn-sm" %>
 <% end %>
-<%= component "container", size: "lg" do %>
-  <%= component "breadcrumbs" do %>
-    <strong><%= link_to 'My Books', new_book_path %></strong>
-  <% end %>
-  <%= component "title", text: "My Books" %>
-  <% @books.each do |book| %>
-    <%= component "cover", url: edit_book_path(book), title: book.title, genre: book.genre, published: book.published %>
-  <% end %>
+<%= component "breadcrumbs" do %>
+  <strong><%= link_to 'My Books', books_path %></strong>
+<% end %>
+<%= component "title", text: "My Books" %>
+<% @books.each do |book| %>
+  <%= component "cover", url: edit_book_path(book), title: book.title, genre: book.genre, published: book.published %>
 <% end %>
