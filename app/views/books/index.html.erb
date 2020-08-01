@@ -6,5 +6,5 @@
 <% end %>
 <%= component "title", text: "My Books" %>
 <% @books.each do |book| %>
-  <%= component "cover", url: edit_book_path(book), title: book.title, genre: book.genre, published: book.published %>
+  <%= component "cover", url: edit_book_path(book), title: book.title, genre: book.genre, published: book.published, author: book.user.email %>
 <% end %>
