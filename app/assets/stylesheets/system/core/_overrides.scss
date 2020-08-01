@@ -1,7 +1,8 @@
 .btn-primary {
   background: #000;
   border: none;
-  &:hover {
+  &:hover, &:active, &:focus {
     background: #222;
+    outline: none;
   }
 }

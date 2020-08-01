@@ -1,10 +1,11 @@
 class BooksController < ApplicationController
+  before_action :authenticate_user!, only: [:new, :edit, :update, :destroy]
   before_action :set_book, only: [:show, :edit, :update, :destroy]
 
   # GET /books
   # GET /books.json
   def index
-    @books = Book.all
+    @books = current_user.books
   end
 
   # GET /books/1
@@ -14,8 +15,8 @@ class BooksController < ApplicationController
 
   # GET /books/new
   def new
-    @books = Book.all
-    @book = Book.new
+    @books = current_user.books
+    @book = current_user.books.build
   end
 
   # GET /books/1/edit
@@ -26,7 +27,7 @@ class BooksController < ApplicationController
   # POST /books
   # POST /books.json
   def create
-    @book = Book.new(book_params)
+    @book = current_user.books.build(book_params)
 
     respond_to do |format|
       if @book.save
