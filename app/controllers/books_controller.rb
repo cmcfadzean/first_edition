@@ -15,7 +15,6 @@ class BooksController < ApplicationController
 
   # GET /books/new
   def new
-    @books = current_user.books
     @book = current_user.books.build
   end
 

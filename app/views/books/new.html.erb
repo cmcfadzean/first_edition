@@ -1,34 +1,8 @@
-<% content_for :actions do %>
-  <a href="#" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
-    New Book
-  </a>
-<% end %>
 <%= component "container", size: "lg" do %>
   <%= component "breadcrumbs" do %>
-    <strong><%= link_to 'My Books', new_book_path %></strong>
+    <%= link_to 'My Books', books_path %>
+    <strong>New Book</strong>
   <% end %>
-  <%= component "title", text: "My Books" %>
-  <% if @books.size > 1 %>
-    <% @books.each do |book| %>
-      <%= component "cover", url: edit_book_path(book), title: book.title, genre: book.genre, published: book.published %>
-    <% end %>
-  <% end %>
+  <%= component "title", text: "New Book" %>
+  <%= render 'form', book: @book %>
 <% end %>
-
-<!-- Modal -->
-<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-  <div class="modal-dialog">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLabel">New Book</h5>
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-          <span aria-hidden="true">&times;</span>
-        </button>
-      </div>
-      <div class="modal-body">
-        <%= render 'form', book: @book %>
-      </div>
-    </div>
-  </div>
-</div>
-
