@@ -1,8 +1,10 @@
-<div class="">
-  <%= link_to 'Books', new_book_path %> / 
-  <%= link_to @chapter.book.title, edit_book_path(@chapter.book) %>
-</div>
-
-<h1>New chapter</h1>
+<%= component "container", size: "lg" do %>
+  <%= component "breadcrumbs" do %>
+    <%= link_to 'My Books', new_book_path %>
+    <%= link_to @chapter.book.title, edit_book_path(@chapter.book) %>
+    <strong>New Chapter</strong>
+  <% end %>
+  <%= component "title", text: "New Chapter" %>
+<% end %>
 
 <%= render 'form' %>
