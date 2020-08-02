@@ -1,0 +1,15 @@
+.system-cover {
+  display: flex;
+  align-items: flex-end;
+  box-shadow: 0 30px 30px rgba(44,26,22,.1);
+  padding: 24px;
+  border-radius: 4px;
+  min-height: 350px;
+  &__info {
+
+  }
+  .badge {
+    margin-top: 12px;
+    padding: 8px;
+  }
+}
