@@ -1,24 +1,18 @@
+<% content_for :actions do %>
+  <%= link_to 'Delete', @book, method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-light btn-sm" %>
+  <%= link_to 'New Chapter', new_book_chapter_path(@book), class: "btn btn-dark btn-sm" %>
+<% end %>
 <%= component "breadcrumbs" do %>
   <%= link_to 'My Books', books_path %>
   <strong><%= @book.title %></strong>
 <% end %>
 <%= component "title", text: @book.title %>
-
 <%= render 'form', book: @book %>
-<%= link_to 'Destroy', @book, method: :delete, data: { confirm: 'Are you sure?' } %>
-
-<h2>Chapters</h2>
-
-<%= link_to 'New Chapter', new_book_chapter_path(@book) %>
-
-<table>
+<%= component "subtitle", text: "Chapters" %>
+<div class="list-group">
   <% @chapters.each_with_index do |chapter, index| %>
-    <tr>
-      <td><%= index + 1 %>. </td>
-      <td><%= chapter.title %></td>
-      <td><%= chapter.published %></td>
-      <td><%= link_to 'Edit', edit_book_chapter_path(chapter.book, chapter) %></td>
-      <td><%= link_to 'Destroy', [chapter.book, chapter], method: :delete, data: { confirm: 'Are you sure?' } %></td>
-    </tr>
+    <%= link_to edit_book_chapter_path(chapter.book, chapter), class: "list-group-item list-group-item-action" do %>
+      <%= index + 1 %>. <%= chapter.title %> <%= chapter.published %>
+    <% end %>
   <% end %>
-</table>
+</div>

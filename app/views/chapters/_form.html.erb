@@ -11,19 +11,19 @@
     </div>
   <% end %>
 
-  <div class="field">
-    <%= f.label :title %><br />
-    <%= f.text_field :title, autofocus: "true" %>
+  <div class="form-group">
+    <%= f.label :title %>
+    <%= f.text_field :title, autofocus: "true", class: "form-control" %>
   </div>
-  <div class="field">
-    <%= f.label :body %><br />
-    <%= f.text_area :body, class: "editable" %>
+  <div class="form-group">
+    <%= f.label :body %>
+    <%= f.text_area :body, class: "editable form-control" %>
   </div>
-  <div class="field">
-    <%= f.label :published %><br />
-    <%= f.check_box :published %>
+  <div class="form-group form-check">
+    <%= f.check_box :published, class: "form-check-input" %>
+    <%= f.label :published %>
   </div>
-  <div class="actions">
-    <%= f.submit %>
+  <div class="form-group">
+    <%= f.submit class: "btn btn-dark" %>
   </div>
 <% end %>

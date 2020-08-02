@@ -1,3 +1,6 @@
+<% content_for :actions do %>
+  <%= link_to 'Delete', [@chapter.book, @chapter], method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-light btn-sm" %>
+<% end %>
 <%= component "breadcrumbs" do %>
   <%= link_to 'My Books', books_path %>
   <%= link_to @chapter.book.title, edit_book_path(@chapter.book) %>
