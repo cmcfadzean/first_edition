@@ -5,12 +5,14 @@ class BooksController < ApplicationController
   # GET /books
   # GET /books.json
   def index
+    @library = Book.all.where(published: true)
     @books = current_user.books
   end
 
   # GET /books/1
   # GET /books/1.json
   def show
+    @chapters = @book.chapters
   end
 
   # GET /books/new

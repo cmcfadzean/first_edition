@@ -1,5 +1,6 @@
 .system-cover {
-  border: 1px solid #f7fafc;
+  opacity: .6;
+  border: 1px solid #edf2f7;
   display: flex;
   flex-direction: column;
   box-shadow: 0 30px 30px rgba(44,26,22,.1);
@@ -12,6 +13,9 @@
   }
   &__info {
     width: 100%;
+  }
+  &--true {
+    opacity: 1;
   }
   .badge {
     margin-top: 12px;

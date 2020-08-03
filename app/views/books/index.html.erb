@@ -10,3 +10,9 @@
     <%= component "cover", url: edit_book_path(book), title: book.title, genre: book.genre, published: book.published, author: book.user.name %>
   <% end %>
 <% end %>
+<%= component "subtitle", text: "Library" %>
+<%= component "shelf" do %>
+  <% @library.each do |book| %>
+    <%= component "cover", url: book_path(book), title: book.title, genre: book.genre, published: book.published, author: book.user.name %>
+  <% end %>
+<% end %>
