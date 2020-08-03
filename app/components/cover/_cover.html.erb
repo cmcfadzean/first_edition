@@ -1,7 +1,7 @@
 <div class="col-4">
   <%= link_to cover.url, class: "system-cover system-cover--#{cover.published}" do %>
+    <h3 class="system-cover__title"><%= cover.title %></h3>
     <div class="system-cover__info">
-      <h3 class="system-cover__title"><%= cover.title %></h3>
       <div class="system-cover__author">by <%= cover.author %></div>
       <span class="badge badge-light"><%= cover.genre %></span>
     </div>
