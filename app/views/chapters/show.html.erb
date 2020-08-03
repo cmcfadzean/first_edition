@@ -4,4 +4,6 @@
   <strong><%= @chapter.title %></strong>
 <% end %>
 <%= component "title", text: @chapter.title %>
-<%= @chapter.body %>
+<%= component "page" do %>
+  <%= @chapter.body.html_safe %>
+<% end %>
