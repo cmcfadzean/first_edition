@@ -2,6 +2,14 @@ class BooksController < ApplicationController
   before_action :authenticate_user!
   before_action :set_book, only: [:show, :edit, :update, :destroy]
 
+  def upvote
+    @book = Book.find(params[:id])
+    @book.upvote_by current_user
+    respond_to do |format|
+      format.html { redirect_to @book, notice: 'Book was successfully upvoted.' }
+    end
+  end
+
   # GET /books
   # GET /books.json
   def index
@@ -12,7 +20,7 @@ class BooksController < ApplicationController
   # GET /books/1
   # GET /books/1.json
   def show
-    @chapters = @book.chapters
+    @chapters = @book.chapters.where(published: true)
   end
 
   # GET /books/new

@@ -41,6 +41,8 @@ gem 'devise'
 gem "components", git: "https://github.com/jensljungblad/components.git"
 gem 'nested_scaffold'
 gem 'medium-editor-rails'
+gem 'acts_as_votable'
+gem 'font-awesome-rails'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console

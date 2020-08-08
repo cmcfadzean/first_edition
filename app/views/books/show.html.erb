@@ -10,10 +10,15 @@
     <div class="list-group">
       <% @chapters.each_with_index do |chapter, index| %>
         <%= link_to book_chapter_path(chapter.book, chapter), class: "list-group-item list-group-item-action" do %>
-          <%= index + 1 %>. <%= chapter.title %> <%= chapter.published %>
+          <%= index + 1 %>. <%= chapter.title %>
         <% end %>
       <% end %>
     </div>
   </div>
-  <%= component "cover", url: "#", title: @book.title, genre: @book.genre, published: @book.published, author: @book.user.name %>
+  <%= component "cover", url: "#", title: @book.title, genre: @book.genre, published: @book.published, author: @book.user.name do %>
+    <%= link_to like_book_path(@book), method: :put do %>
+      <%= fa_icon "heart-o" %>
+      <%= @book.score %>
+    <% end %>
+  <% end %>
 </div>
