@@ -11,9 +11,15 @@
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
   </head>
 
-  <body>
-    <%= component "logo" %>
-    <%= yield %>
+  <body class="auth">
+    <%= component "sidebar" do %>
+      <%= component "logo" %>
+      <%= yield %>
+    <% end %>
+    <%= component "billboard", img: "people.png" do %>
+      <h2>Anyone can write the next great novel...</h2>
+      <p>We have all found ourselves with a lot of unexpected free time these days. Now is the perfect time to do share a story with the world.</p>
+    <% end %>
     <%= component "alert", id: "notice", message: notice %>
     <%= component "alert", id: "alert", message: alert %>
     <!-- JS, Popper.js, and jQuery -->
