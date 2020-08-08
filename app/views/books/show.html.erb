@@ -16,4 +16,8 @@
     </div>
   </div>
   <%= component "cover", url: "#", title: @book.title, genre: @book.genre, published: @book.published, author: @book.user.name %>
+  <%= link_to like_book_path(@book), method: :put do %>
+    <%= @book.score %>
+    like
+  <% end %>
 </div>
