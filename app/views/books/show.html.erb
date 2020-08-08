@@ -15,9 +15,10 @@
       <% end %>
     </div>
   </div>
-  <%= component "cover", url: "#", title: @book.title, genre: @book.genre, published: @book.published, author: @book.user.name %>
-  <%= link_to like_book_path(@book), method: :put do %>
-    <%= @book.score %>
-    like
+  <%= component "cover", url: "#", title: @book.title, genre: @book.genre, published: @book.published, author: @book.user.name do %>
+    <%= link_to like_book_path(@book), method: :put do %>
+      <%= fa_icon "heart-o" %>
+      <%= @book.score %>
+    <% end %>
   <% end %>
 </div>
