@@ -15,21 +15,14 @@
   <body>
     <%= component "navbar" do %>
       <%= component "logo" %>
-      <% if user_signed_in? %>
-        <%= yield :actions %>
+      <%= yield :actions %>
         <%= component "avatar", name: current_user.name do %>
-          <%= link_to "Settings", edit_user_registration_path %>
-          <%= link_to "Logout", destroy_user_session_path, method: :delete  %>
-        <% end %>
-      <% else %>
-        <%= link_to "Login", new_user_session_path, :class => '#'  %>
-        <%= link_to "Sign up", new_user_registration_path, :class => 'btn btn-dark'  %>
+        <%= link_to "Settings", edit_user_registration_path %>
+        <%= link_to "Logout", destroy_user_session_path, method: :delete  %>
       <% end %>
     <% end %>
     <%= component "desk" do %>
-      <%= component "container", size: "md" do %>
-        <%= yield %>
-      <% end %>
+      <%= yield %>
     <% end %>
     <%= component "alert", id: "notice", message: notice %>
     <%= component "alert", id: "alert", message: alert %>

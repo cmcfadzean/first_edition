@@ -1,9 +1,11 @@
-<%= component "breadcrumbs" do %>
-  <%= link_to 'My Books', books_path %>
-  <%= link_to @chapter.book.title, book_path(@chapter.book) %>
-  <strong><%= @chapter.title %></strong>
-<% end %>
-<%= component "title", text: @chapter.title %>
-<%= component "page" do %>
-  <%= @chapter.body.html_safe %>
+<%= component "container", size: "md" do %>
+  <%= component "breadcrumbs" do %>
+    <%= link_to 'My Books', books_path %>
+    <%= link_to @chapter.book.title, book_path(@chapter.book) %>
+    <strong><%= @chapter.title %></strong>
+  <% end %>
+  <%= component "title", text: @chapter.title %>
+  <%= component "page" do %>
+    <%= @chapter.body.html_safe %>
+  <% end %>
 <% end %>

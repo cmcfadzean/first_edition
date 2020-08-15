@@ -1,21 +1,23 @@
 <% content_for :actions do %>
   <%= link_to 'New Book', new_book_path, class: "btn btn-dark btn-sm" %>
 <% end %>
-<%= component "well" do %>
-  <%= component "subtitle", text: "My Books" %>
-  <%= component "shelf" do %>
-    <% @books.each do |book| %>
-      <%= component "cover", url: edit_book_path(book), title: book.title, genre: book.genre, published: book.published, author: book.user.name %>
+<%= component "container", size: "lg" do %>
+  <%= component "well" do %>
+    <%= component "subtitle", text: "My Books" %>
+    <%= component "shelf" do %>
+      <% @books.each do |book| %>
+        <%= component "cover", url: edit_book_path(book), title: book.title, genre: book.genre, published: book.published, author: book.user.name %>
+      <% end %>
     <% end %>
   <% end %>
-<% end %>
-<%= component "title", text: "The Library" %>
-<%= component "shelf" do %>
-  <% @library.each do |book| %>
-    <%= component "cover", url: book_path(book), title: book.title, genre: book.genre, published: book.published, author: book.user.name do %>
-      <%= link_to like_book_path(book), method: :put do %>
-        <%= book.score %>
-        <%= fa_icon "heart-o" %>
+  <%= component "title", text: "The Library" %>
+  <%= component "shelf" do %>
+    <% @library.each do |book| %>
+      <%= component "cover", url: book_path(book), title: book.title, genre: book.genre, published: book.published, author: book.user.name do %>
+        <%= link_to like_book_path(book), method: :put do %>
+          <%= book.score %>
+          <%= fa_icon "heart-o" %>
+        <% end %>
       <% end %>
     <% end %>
   <% end %>

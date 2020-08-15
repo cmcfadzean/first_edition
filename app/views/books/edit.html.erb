@@ -2,17 +2,19 @@
   <%= link_to 'Delete', @book, method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-light btn-sm" %>
   <%= link_to 'New Chapter', new_book_chapter_path(@book), class: "btn btn-dark btn-sm" %>
 <% end %>
-<%= component "breadcrumbs" do %>
-  <%= link_to 'My Books', books_path %>
-  <strong><%= @book.title %></strong>
-<% end %>
-<%= component "title", text: @book.title %>
-<%= render 'form', book: @book %>
-<%= component "subtitle", text: "Chapters" %>
-<div class="list-group">
-  <% @chapters.each_with_index do |chapter, index| %>
-    <%= link_to edit_book_chapter_path(chapter.book, chapter), class: "list-group-item list-group-item-action" do %>
-      <%= index + 1 %>. <%= chapter.title %>
-    <% end %>
+<%= component "container", size: "md" do %>
+  <%= component "breadcrumbs" do %>
+    <%= link_to 'My Books', books_path %>
+    <strong><%= @book.title %></strong>
   <% end %>
-</div>
+  <%= component "title", text: @book.title %>
+  <%= render 'form', book: @book %>
+  <%= component "subtitle", text: "Chapters" %>
+  <div class="list-group">
+    <% @chapters.each_with_index do |chapter, index| %>
+      <%= link_to edit_book_chapter_path(chapter.book, chapter), class: "list-group-item list-group-item-action" do %>
+        <%= index + 1 %>. <%= chapter.title %>
+      <% end %>
+    <% end %>
+  </div>
+<% end %>
