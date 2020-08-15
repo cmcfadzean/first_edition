@@ -1,7 +1,7 @@
 <% content_for :actions do %>
   <%= link_to like_book_path(@book), method: :put, class: "btn btn-dark btn-sm" do %>
     <%= @book.score %>
-    <%= fa_icon "heart-o" %>&nbsp;&nbsp;&nbsp; Like This Book
+    <%= fa_icon "heart" %>&nbsp;&nbsp;&nbsp; Like This Book
   <% end %>
 <% end %>
 <%= component "container", size: "md" do %>
