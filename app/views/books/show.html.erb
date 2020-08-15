@@ -2,23 +2,20 @@
   <%= link_to 'My Books', books_path %>
   <strong><%= @book.title %></strong>
 <% end %>
-<div class="row">
-  <div class="col-8">
-    <%= component "title", text: @book.title %>
-    <p class="lead"><%= @book.description %></p>
-    <%= component "subtitle", text: "Chapters" %>
-    <div class="list-group">
-      <% @chapters.each_with_index do |chapter, index| %>
-        <%= link_to book_chapter_path(chapter.book, chapter), class: "list-group-item list-group-item-action" do %>
-          <%= index + 1 %>. <%= chapter.title %>
-        <% end %>
-      <% end %>
-    </div>
-  </div>
-  <%= component "cover", url: "#", title: @book.title, genre: @book.genre, published: @book.published, author: @book.user.name do %>
-    <%= link_to like_book_path(@book), method: :put do %>
-      <%= fa_icon "heart-o" %>
-      <%= @book.score %>
+<% content_for :actions do %>
+  <%= link_to like_book_path(@book), method: :put, class: "btn btn-dark btn-sm" do %>
+    <%= @book.score %>
+    <%= fa_icon "heart-o" %>&nbsp;&nbsp;&nbsp; Like This Book
+  <% end %>
+<% end %>
+<%= component "title", text: @book.title %>
+<%= component "subtitle", text: "By #{@book.user.name}" %>
+<p class="lead"><%= @book.description %></p>
+<%= component "subtitle", text: "Chapters" %>
+<div class="list-group">
+  <% @chapters.each_with_index do |chapter, index| %>
+    <%= link_to book_chapter_path(chapter.book, chapter), class: "list-group-item list-group-item-action" do %>
+      <%= index + 1 %>. <%= chapter.title %>
     <% end %>
   <% end %>
 </div>

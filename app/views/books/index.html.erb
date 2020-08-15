@@ -15,8 +15,8 @@
   <% @library.each do |book| %>
     <%= component "cover", url: book_path(book), title: book.title, genre: book.genre, published: book.published, author: book.user.name do %>
       <%= link_to like_book_path(book), method: :put do %>
-        <%= fa_icon "heart-o" %>
         <%= book.score %>
+        <%= fa_icon "heart-o" %>
       <% end %>
     <% end %>
   <% end %>
