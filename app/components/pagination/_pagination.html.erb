@@ -1,0 +1,12 @@
+<div class="system-pagination">
+  <% if @chapter.prev.present? %>
+    <%= link_to book_chapter_path(@chapter.book, @chapter.prev), class: "btn btn-light" do %>
+      Last Chapter
+    <% end %>
+  <% end %>
+  <% if @chapter.next.present? %>
+    <%= link_to book_chapter_path(@chapter.book, @chapter.next), class: "btn btn-dark" do %>
+      Next Chapter
+    <% end %>
+  <% end %>
+</div>
