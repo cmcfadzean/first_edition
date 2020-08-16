@@ -1,3 +1,6 @@
+<% content_for :actions do %>
+  <%= component "pagination" %>
+<% end %>
 <%= component "container", size: "md" do %>
   <%= component "breadcrumbs" do %>
     <%= link_to 'My Books', books_path %>
@@ -8,5 +11,4 @@
   <%= component "page" do %>
     <%= @chapter.body.html_safe %>
   <% end %>
-  <%= component "pagination" %>
 <% end %>
